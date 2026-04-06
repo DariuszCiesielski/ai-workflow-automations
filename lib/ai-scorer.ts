@@ -77,11 +77,18 @@ export async function aiScore(
 
   const parsed = safeParseJSON(rawResponse);
 
+  const summary = typeof parsed.summary === "string" ? parsed.summary : "Brak podsumowania";
+  const score = typeof parsed.score === "number" ? parsed.score : 3;
+  const scoreReason = typeof parsed.scoreReason === "string" ? parsed.scoreReason : "Brak uzasadnienia";
+  const tags = Array.isArray(parsed.tags)
+    ? parsed.tags.filter((t): t is string => typeof t === "string")
+    : [];
+
   return {
-    summary: parsed.summary ?? "Brak podsumowania",
-    score: Math.min(10, Math.max(1, Math.round(parsed.score ?? 3))),
-    scoreReason: parsed.scoreReason ?? "Brak uzasadnienia",
-    tags: Array.isArray(parsed.tags) ? parsed.tags : [],
+    summary,
+    score: Math.min(10, Math.max(1, Math.round(score))),
+    scoreReason,
+    tags,
     provider,
     model:
       provider === "openai"

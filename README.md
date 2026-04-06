@@ -1,6 +1,10 @@
 🇬🇧 [English](README.md) | 🇵🇱 [Polski](README.pl.md)
 
-# AI Workflow Automations
+![Last updated](https://img.shields.io/badge/Last%20updated-April%202026-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Contributions welcome](https://img.shields.io/badge/Contributions-welcome-brightgreen.svg)
+
+# AI Workflow Automations for Content Pipelines and Business Intelligence
 
 > Ready-to-use AI workflow automations for business intelligence, content pipelines, and lead monitoring.
 
@@ -73,6 +77,22 @@ See [docs/architecture.md](docs/architecture.md) for details.
 - **Runtime**: Node.js 18+ / TypeScript
 - **AI**: OpenAI API or Anthropic API (configurable)
 - **No framework lock-in** — plain TypeScript, easy to integrate
+
+## Contributing
+
+Contributions, corrections, and reusable workflow templates are welcome. Open an issue or PR if you want to improve a workflow or add a practical business automation example.
+
+## Related Repositories
+
+- [ai-content-marketing](https://github.com/DariuszCiesielski/ai-content-marketing) — editorial processes and content repurposing workflows
+- [supabase-wzorce](https://github.com/DariuszCiesielski/supabase-wzorce) — secure data and backend patterns for workflow apps
+- [agent-orchestration-patterns](https://github.com/DariuszCiesielski/agent-orchestration-patterns) — coordination patterns for more advanced automation systems
+
+## Stay Connected
+
+- **Newsletter**: [AI w Biznesie](https://aiwbiznesie.pl)
+- **LinkedIn**: [Dariusz Ciesielski](https://www.linkedin.com/in/dariuszciesielski/)
+- **More repositories**: [DariuszCiesielski on GitHub](https://github.com/DariuszCiesielski)
 
 ## License
 

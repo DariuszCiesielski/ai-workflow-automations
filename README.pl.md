@@ -1,5 +1,9 @@
 🇬🇧 [English](README.md) | 🇵🇱 [Polski](README.pl.md)
 
+![Last updated](https://img.shields.io/badge/Last%20updated-April%202026-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Contributions welcome](https://img.shields.io/badge/Contributions-welcome-brightgreen.svg)
+
 # Automatyzacje Workflow AI
 
 > Gotowe do użycia automatyzacje workflow AI — inteligencja z YouTube, pipeline contentowy, monitoring leadów.
@@ -61,6 +65,18 @@ Szczegóły: [docs/architecture.md](docs/architecture.md)
 ### Biblioteki współdzielone
 - [`lib/ai-scorer.ts`](lib/ai-scorer.ts) — Uniwersalny scoring AI
 - [`lib/dedup.ts`](lib/dedup.ts) — Deduplikacja z wzorcem external_id
+
+## Powiązane repozytoria
+
+- [ai-content-marketing](https://github.com/DariuszCiesielski/ai-content-marketing/blob/main/README.pl.md) — procesy redakcyjne i workflow repurposingu treści
+- [supabase-wzorce](https://github.com/DariuszCiesielski/supabase-wzorce/blob/main/README.pl.md) — bezpieczne wzorce danych i backendu dla aplikacji workflow
+- [agent-orchestration-patterns](https://github.com/DariuszCiesielski/agent-orchestration-patterns/blob/main/README.pl.md) — wzorce koordynacji dla bardziej zaawansowanych systemów automatyzacji
+
+## Bądź w kontakcie
+
+- **Newsletter**: [AI w Biznesie](https://aiwbiznesie.pl)
+- **LinkedIn**: [Dariusz Ciesielski](https://www.linkedin.com/in/dariuszciesielski/)
+- **Więcej repozytoriów**: [DariuszCiesielski na GitHub](https://github.com/DariuszCiesielski)
 
 ## Licencja
 

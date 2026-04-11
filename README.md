@@ -1,99 +1,86 @@
-🇬🇧 [English](README.md) | 🇵🇱 [Polski](README.pl.md)
+<p align="center">
+  <strong>Automatyzacje AI — gotowe workflow</strong><br/>
+  Gotowe do użycia automatyzacje AI: monitoring YouTube, pipeline treści, śledzenie leadów i konkurencji.
+</p>
 
-![Last updated](https://img.shields.io/badge/Last%20updated-April%202026-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Contributions welcome](https://img.shields.io/badge/Contributions-welcome-brightgreen.svg)
+<p align="center">
+  <img src="https://img.shields.io/badge/Język-Polski-red" alt="Polski" />
+  <img src="https://img.shields.io/badge/Licencja-MIT-green" alt="MIT" />
+  <img src="https://img.shields.io/badge/Workflow-3-blue" alt="3 workflow" />
+  <img src="https://img.shields.io/badge/Runtime-TypeScript-orange" alt="TypeScript" />
+</p>
 
-# AI Workflow Automations for Content Pipelines and Business Intelligence
+## Dlaczego to ważne
 
-> Ready-to-use AI workflow automations for business intelligence, content pipelines, and lead monitoring.
+| Fakt | Kontekst |
+|------|----------|
+| Automatyzacje AI oszczędzają **15–30h tygodniowo** | Na monitoringu, raportach i rutynowych zadaniach |
+| ROI w **2–4 tygodnie** | Koszt wdrożenia zwraca się błyskawicznie |
+| **1 workflow zastępuje 2–3 narzędzia SaaS** | Mniej subskrypcji, więcej kontroli |
 
-## Featured Workflow: YouTube Content Intelligence
+Każdy workflow działa samodzielnie, bez framework lock-in — czysty TypeScript, łatwy do integracji z dowolnym projektem.
 
-A complete pipeline for monitoring YouTube channels and scoring content relevance for your business. Includes a **4-tier transcript fetcher** that works without any API keys (paid fallback optional).
+## Co zawiera
 
-## Workflows
+### Workflow
 
-| Workflow | Status | Description |
-|----------|--------|-------------|
-| [YouTube Content Intel](workflows/youtube-content-intel/) | Production | YouTube transcript → AI scoring → business intelligence |
-| [Auto Follow-Up](workflows/auto-follow-up/) | Template | Automated email follow-up sequences |
-| [Competitor Monitor](workflows/competitor-monitor/) | Template | Track competitor changes and get alerts |
+| Workflow | Status | Opis |
+|----------|--------|------|
+| [YouTube Content Intel](workflows/youtube-content-intel/) | Produkcja | Transkrypcja YouTube → scoring AI → business intelligence |
+| [Auto Follow-Up](workflows/auto-follow-up/) | Szablon | Automatyczne sekwencje follow-up email |
+| [Competitor Monitor](workflows/competitor-monitor/) | Szablon | Śledzenie zmian u konkurencji z alertami |
 
-## Quick Start
+### Kluczowe komponenty
+
+**YouTube Transcript Fetcher** — 4-warstwowy system pobierania transkrypcji:
+- Warstwa 1: InnerTube Web API (za darmo, bez klucza)
+- Warstwa 2: InnerTube Android API (za darmo, bez klucza)
+- Warstwa 3: Parsowanie HTML strony (za darmo, bez klucza)
+- Warstwa 4: Supadata API (płatny fallback, opcjonalny)
+
+**AI Content Scorer** — konfigurowalny pipeline scoringu:
+- Podsumowanie, ocena 1–10, uzasadnienie, tagi
+- Prompt zoptymalizowany pod polską grupę docelową
+
+### Architektura
+
+Wszystkie workflow działają wg tego samego wzorca:
+
+```
+[Źródło A] ──┐
+[Źródło B] ──┼→ [Normalizer] → [AI Scorer] → [Akcja]
+[Źródło C] ──┘
+```
+
+→ [Szczegóły architektury](docs/architecture.md) | [Jak zacząć](docs/getting-started.md)
+
+### Szybki start
 
 ```bash
 git clone https://github.com/DariuszCiesielski/ai-workflow-automations.git
 cd ai-workflow-automations
-
-# Install dependencies
 npm install
-
-# Copy environment template
 cp workflows/youtube-content-intel/.env.example .env
-
-# Edit .env with your API keys
-# Then run the YouTube intelligence pipeline
 npx tsx workflows/youtube-content-intel/youtube-transcript.ts
 ```
 
-## Architecture
+## Dla kogo
 
-All workflows follow the same multi-source aggregation pattern:
+- ✅ Przedsiębiorcy, którzy chcą zautomatyzować monitoring treści i konkurencji
+- ✅ Marketerzy szukający gotowych pipeline'ów do content intelligence
+- ✅ Programiści budujący własne automatyzacje na bazie sprawdzonych wzorców
+- ✅ Zespoły, które płacą za 5 narzędzi SaaS, a mogłyby mieć 1 workflow
 
-```
-[Source A] ──┐
-[Source B] ──┼→ [Normalizer] → [AI Scorer] → [Action]
-[Source C] ──┘
-```
+## Chcesz to wdrożyć?
 
-See [docs/architecture.md](docs/architecture.md) for details.
+Wiedza jest darmowa. Wdrożenie wymaga narzędzi.
 
-## Key Components
+👉 **[AI w Biznesie](https://aiwbiznesie.online)** — blog, case studies, narzędzia AI dla firm
 
-### YouTube Transcript Fetcher (`youtube-transcript.ts`)
-- **Tier 1**: InnerTube Web API (free, no key needed)
-- **Tier 2**: InnerTube Android API (free, no key needed)
-- **Tier 3**: HTML page parsing (free, no key needed)
-- **Tier 4**: Supadata API (paid fallback, optional)
+👉 **[Umów rozmowę](https://aiwbiznesie.online/kontakt/)** — pomogę zbudować automatyzacje AI dopasowane do Twojej firmy
 
-### AI Content Scorer (`content-scorer.ts`)
-- Configurable scoring pipeline (OpenAI or Anthropic)
-- Returns: summary, score (1-10), reasoning, tags
-- Prompt optimized for Polish business audience
+## Licencja
 
-### Shared Libraries
-- [`lib/ai-scorer.ts`](lib/ai-scorer.ts) — Generic AI scoring utility
-- [`lib/dedup.ts`](lib/dedup.ts) — Deduplication using external_id pattern
+MIT
 
-## Documentation
-
-- [Architecture Overview](docs/architecture.md)
-- [Getting Started](docs/getting-started.md)
-- [Supadata Setup](docs/supadata-setup.md) (optional paid transcript provider)
-
-## Tech Stack
-
-- **Runtime**: Node.js 18+ / TypeScript
-- **AI**: OpenAI API or Anthropic API (configurable)
-- **No framework lock-in** — plain TypeScript, easy to integrate
-
-## Contributing
-
-Contributions, corrections, and reusable workflow templates are welcome. Open an issue or PR if you want to improve a workflow or add a practical business automation example.
-
-## Related Repositories
-
-- [ai-content-marketing](https://github.com/DariuszCiesielski/ai-content-marketing) — editorial processes and content repurposing workflows
-- [supabase-wzorce](https://github.com/DariuszCiesielski/supabase-wzorce) — secure data and backend patterns for workflow apps
-- [agent-orchestration-patterns](https://github.com/DariuszCiesielski/agent-orchestration-patterns) — coordination patterns for more advanced automation systems
-
-## Stay Connected
-
-- **Newsletter**: [AI w Biznesie](https://aiwbiznesie.pl)
-- **LinkedIn**: [Dariusz Ciesielski](https://www.linkedin.com/in/dariuszciesielski/)
-- **More repositories**: [DariuszCiesielski on GitHub](https://github.com/DariuszCiesielski)
-
-## License
-
-MIT License — see [LICENSE](LICENSE) for details.
+<p align="center"><sub>Zbudowane przez <a href="https://aiwbiznesie.online">AI w Biznesie</a></sub></p>
